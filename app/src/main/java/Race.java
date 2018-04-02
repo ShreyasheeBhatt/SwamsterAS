@@ -19,7 +19,7 @@ public class Race
     }
 
     /**
-     * Gets the event of the race. 
+     * Gets the event of the race.
      * @return event name
      */
     public String getEvent()
