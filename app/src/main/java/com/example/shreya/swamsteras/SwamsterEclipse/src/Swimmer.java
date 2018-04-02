@@ -20,7 +20,7 @@ public class Swimmer {
 	}
 	
 	/**
-	 * Gets the last name of the swimmer. 
+	 * Gets the last name of the swimmer.
 	 * @return last name
 	 */
 	public String getLastName()
