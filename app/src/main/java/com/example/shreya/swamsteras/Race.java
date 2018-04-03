@@ -1,4 +1,4 @@
-/**
+package com.example.shreya.swamsteras; /**
  * Created by Eliana on 3/28/2018.
  */
 import java.util.*;
@@ -66,7 +66,7 @@ public class Race
     }
 
     /**
-     * Converts Race object to a string.
+     * Converts com.example.shreya.swamsteras.Race object to a string.
      */
     @Override
     public String toString() {
