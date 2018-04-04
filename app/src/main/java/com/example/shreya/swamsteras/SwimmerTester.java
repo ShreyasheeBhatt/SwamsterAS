@@ -1,4 +1,4 @@
-/**
+package com.example.shreya.swamsteras; /**
  * Created by Eliana on 3/28/2018.
  */
 
@@ -9,7 +9,7 @@ public class SwimmerTester
     public static void main(String [] args)
     {
 		/*
-		 * user inputs would be created as variables, and the variables would be inputted as parameters into the Swimmer object and Race objects.
+		 * user inputs would be created as variables, and the variables would be inputted as parameters into the com.example.shreya.swamsteras.Swimmer object and com.example.shreya.swamsteras.Race objects.
 		 */
         Race fly50 = new Race("15 & over 50 meter Butterly", 9, 4, 0);
         Race free50 = new Race("15 & over 50 meter Freestyle", 12, 2, 0);

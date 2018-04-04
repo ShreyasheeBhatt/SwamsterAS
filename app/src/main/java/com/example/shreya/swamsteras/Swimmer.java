@@ -1,4 +1,4 @@
-/**
+package com.example.shreya.swamsteras; /**
  * Created by Eliana on 3/28/2018.
  */
 
@@ -62,7 +62,7 @@ public class Swimmer {
      * Gets the list of races the swimmer is swimming in this particular meet.
      * @return races
      */
-//	public ArrayList<Race> getRaces()
+//	public ArrayList<com.example.shreya.swamsteras.Race> getRaces()
 //	{
 //		return races;
 //	}
@@ -157,7 +157,7 @@ public class Swimmer {
         return list.substring(1,list.length());
     }
     /**
-     * Converts Swimmer object to a string.
+     * Converts com.example.shreya.swamsteras.Swimmer object to a string.
      */
     @Override
     public String toString() {
