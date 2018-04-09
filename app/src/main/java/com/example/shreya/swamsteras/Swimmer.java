@@ -62,11 +62,19 @@ public class Swimmer {
      * Gets the list of races the swimmer is swimming in this particular meet.
      * @return races
      */
-//	public ArrayList<com.example.shreya.swamsteras.Race> getRaces()
-//	{
-//		return races;
-//	}
+	public ArrayList<Race> getRaceList()
+	{
+		return races;
+	}
 
+    /**
+     * Adds a race to the list of races for a swimmer.
+     * @param race
+     */
+	public void addRace(Race race)
+    {
+	    races.add(race);
+    }
     /**
      *
      * @return
