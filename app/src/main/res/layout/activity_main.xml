@@ -8,14 +8,16 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="153dp"
+        android:layout_height="49dp"
         android:layout_marginBottom="21dp"
         android:layout_marginTop="159dp"
         android:text="@string/WelcomeText"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,7 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="259dp"
         android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:text="@string/AdminButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
@@ -37,7 +41,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="259dp"
-        android:onClick="onClick"
         android:text="@string/SwimmerCoachButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

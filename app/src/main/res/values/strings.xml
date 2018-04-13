@@ -2,5 +2,29 @@
     <string name="app_name">SwamsterAS</string>
     <string name="AdminButton">Administrator</string>
     <string name="SwimmerCoachButton">Swimmer/Coach</string>
-    <string name="WelcomeText">Welcome to Swamster!</string>
+    <string name="WelcomeText">SWAMSTER: The Swim Meet Master</string>
+    <string name="enterSwimId">Enter Swimmmer Id Number</string>
+    <string name="MeetAsk">Select your meet:</string>
+    <string name="AgeAsk">Select your age:</string>
+    <string name="TeamAsk">Select your team:</string>
+    <string name="LastNameAsk">Enter your last name:</string>
+    <string name="FirstNameAsk">Enter your first name:</string>
+    <string-array name= "schools">
+        <item>Mams</item>
+        <item>Auburn</item>
+        <item>Westboro</item>
+        <item>Grafton</item>
+    </string-array>
+    <string-array name= "teams">
+        <item>17</item>
+        <item>20</item>
+        <item>1</item>
+        <item>4</item>
+    </string-array>
+    <string-array name= "ages">
+        <item>10 and Under</item>
+        <item>11-12</item>
+        <item>13-14</item>
+        <item>15 and Older</item>
+    </string-array>
 </resources>
