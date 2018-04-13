@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "824450759757",
+    "firebase_url": "https://swamsteras.firebaseio.com",
+    "project_id": "swamsteras",
+    "storage_bucket": "swamsteras.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824450759757:android:f3a78cdf842fa529",
+        "android_client_info": {
+          "package_name": "com.example.shreya.swamsteras"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824450759757-trmhvmp3l4pq4ta0sb5261t6ani9qf6c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shreya.swamsteras",
+            "certificate_hash": "e3011f236cd7df90a08758231feeaa8c7175bb6a"
+          }
+        },
+        {
+          "client_id": "824450759757-nj9iv8hj3negke83d7gsl4o51mejfqdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNC6Pn3zqTI4e45iIrTa_QI4p3M84AcIg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824450759757-nj9iv8hj3negke83d7gsl4o51mejfqdb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
