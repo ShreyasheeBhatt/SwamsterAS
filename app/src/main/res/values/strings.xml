@@ -9,6 +9,8 @@
     <string name="TeamAsk">Select your team:</string>
     <string name="LastNameAsk">Enter your last name:</string>
     <string name="FirstNameAsk">Enter your first name:</string>
+    <string name="firstNameAns" />
+    <string name="lastNameAns" />
     <string-array name= "schools">
         <item>Mams</item>
         <item>Auburn</item>
