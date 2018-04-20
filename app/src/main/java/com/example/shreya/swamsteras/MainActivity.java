@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClick(Button doneButton) {
+    public void onClick(Button swimmerChoiceButton2) {
         Intent intent = new Intent(this, SwimAndCoachAns.class);
         startActivity(intent);
     }
