@@ -11,19 +11,20 @@
     <string name="FirstNameAsk">Enter your first name:</string>
     <string name="firstNameAns" />
     <string name="lastNameAns" />
-    <string-array name= "schools">
+    <string name="agree">I Agree</string>
+    <string-array name="schools">
         <item>Mams</item>
         <item>Auburn</item>
         <item>Westboro</item>
         <item>Grafton</item>
     </string-array>
-    <string-array name= "teams">
+    <string-array name="teams">
         <item>17</item>
         <item>20</item>
         <item>1</item>
         <item>4</item>
     </string-array>
-    <string-array name= "ages">
+    <string-array name="ages">
         <item>10 and Under</item>
         <item>11-12</item>
         <item>13-14</item>
