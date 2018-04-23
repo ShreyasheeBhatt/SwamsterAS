@@ -12,6 +12,8 @@
     <string name="firstNameAns" />
     <string name="lastNameAns" />
     <string name="agree">I Agree</string>
+    <string name="agreement">Terms and Agreements:</string>
+    <string name="actualAgree">By continuing, you are agreeing that you are a part of administration. Altering swim times and other information is an offense and has consequences.</string>
     <string-array name="schools">
         <item>Mams</item>
         <item>Auburn</item>
