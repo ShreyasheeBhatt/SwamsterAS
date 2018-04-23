@@ -9,19 +9,24 @@
     <string name="TeamAsk">Select your team:</string>
     <string name="LastNameAsk">Enter your last name:</string>
     <string name="FirstNameAsk">Enter your first name:</string>
-    <string-array name= "schools">
+    <string name="firstNameAns" />
+    <string name="lastNameAns" />
+    <string name="agree">I Agree</string>
+    <string name="agreement">Terms and Agreements:</string>
+    <string name="actualAgree">By continuing, you are agreeing that you are a part of administration. Altering swim times and other information is an offense and has consequences.</string>
+    <string-array name="schools">
         <item>Mams</item>
         <item>Auburn</item>
         <item>Westboro</item>
         <item>Grafton</item>
     </string-array>
-    <string-array name= "teams">
+    <string-array name="teams">
         <item>17</item>
         <item>20</item>
         <item>1</item>
         <item>4</item>
     </string-array>
-    <string-array name= "ages">
+    <string-array name="ages">
         <item>10 and Under</item>
         <item>11-12</item>
         <item>13-14</item>
