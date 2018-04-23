@@ -9,13 +9,15 @@ public class Race
     private int heat;
     private int lane;
     private double time;
+    private String swimmer;
 
-    public Race(String eventName, int heatNum, int laneNum, double timeSwam)
+    public Race(String eventName, int heatNum, int laneNum, double timeSwam, String swi)
     {
         event = eventName;
         heat = heatNum;
         lane = laneNum;
         time = timeSwam;
+        swimmer = swi;
     }
 
     /**
@@ -44,6 +46,12 @@ public class Race
     {
         return lane;
     }
+
+    /**
+     * Gets swimmer of race.
+     * @return swimmer
+     */
+    public String getSwimmer() { return swimmer;}
 
     /**
      * Gets the time it took to swim the race.
