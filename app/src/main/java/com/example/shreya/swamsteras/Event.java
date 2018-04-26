@@ -36,7 +36,7 @@ public class Event {
     }
 
     /**
-     * Gets an A+-rraylist of races or heats within the event.
+     * Gets an ArrayList of races or heats within the event.
      * @return list of races.
      */
     public ArrayList<Race> getRaces() {
