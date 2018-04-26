@@ -1,5 +1,7 @@
 package com.example.shreya.swamsteras;
 
+import android.util.Log;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,16 +32,18 @@ public class DataBaser {
         eventRef.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-               test = dataSnapshot.getValue(String.class) + "hey";
+               test = dataSnapshot.getValue(String.class);
+               Log.d ("charles", "read");
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                //System.out.println("The read failed: " + databaseError.getCode());
+                System.out.println("The read failed: " + databaseError.getCode());
             }
 
 
         });
+        Log.d ("charles","before send");
         return test+"noice ";
 
     }

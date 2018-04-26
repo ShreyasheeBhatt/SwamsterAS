@@ -25,32 +25,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d ("charles","first");
-
-
-
-/*    public void onClick(Button doneButton) {
-        Intent intent = new Intent(this, SwimAndCoachAns.class);
-        startActivity(intent);
-    }
-*/
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference eventRef = database.getReference("server");
+        DatabaseReference eventRef = database.getReference("race");
 
-        eventRef.setValue("this is a big test");
+        eventRef.setValue(new Race("15 & over 50 meter Butterly", 9, 4, 0,"Ayy"));
 
-        DataBaser data = new DataBaser();
-        String tested = data.getTest();
-        Log.d ("charles",tested+"cool");
 
-        Log.d ("charles","last");
-
-/*        eventRef.addValueEventListener(new ValueEventListener(){
+        eventRef.addValueEventListener(new ValueEventListener(){
                                            @Override
                                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                              String test = dataSnapshot.getValue(String.class);
-                                              Log.d("charles",test);
+                                              Race test = dataSnapshot.getValue(Race.class);
+                                              Log.d("charles",test.getSwimmer());
                                            }
 
                                            @Override
@@ -58,8 +44,5 @@ public class MainActivity extends AppCompatActivity {
                                                System.out.println("The read failed: " + databaseError.getCode());
                                            }
     });
-*/
-//    public void onClick(View v) {
-//            startActivity(new Intent(MainActivity.this, swimmerandcoach.class));
 
 }}

@@ -20,6 +20,8 @@ public class Race
         swimmer = swi;
     }
 
+    public Race(){}
+
     /**
      * Gets the event of the race.
      * @return event name
