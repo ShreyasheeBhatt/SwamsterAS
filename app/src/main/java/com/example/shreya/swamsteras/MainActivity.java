@@ -12,10 +12,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void onClick(Button swimmerChoiceButton2) {
-        Intent intent = new Intent(this, SwimAndCoachAns.class);
-        startActivity(intent);
+        Button btn = findViewById(R.id.swimmerChoiceButton2);
+        btn.setOnClickListener(new View.OnClickListener(){
+        public void onClick(View view) {
+            Intent intent = new Intent(view.getContext(), SwimAndCoachAns.class);
+            startActivity(intent);
+        }
+        });
     }
 }
