@@ -16,8 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SwimAndCoachAns"></activity> -->
-        <activity android:name=".adminLogin"></activity> -->
+        <activity android:name=".SwimAndCoachAns" />
+        <activity android:name=".adminLogin" />
+        <activity android:name=".coachLogin" />
+        <activity android:name=".coachOrSwimmer"/>
     </application>
 
 </manifest>

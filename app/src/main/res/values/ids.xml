@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="spinner2" type="id" />
+    <item name="coachTeamChoices" type="id" />
+    <item name="iAmASwimmer" type="id">I am a Swimmer</item>
+    <item name="iAmACoach" type="id" />
 </resources>

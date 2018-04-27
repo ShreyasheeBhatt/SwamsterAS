@@ -1,35 +1,34 @@
 package com.example.shreya.swamsteras;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class coachOrSwimmer extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_coach_or_swimmer);
 
-        //The swimmer/coach button on the main page connects to the login page.
-        final Button btn = findViewById(R.id.swimmerChoiceButton2);
+        final Button btn = findViewById(R.id.iAmASwimmer);
         btn.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), coachOrSwimmer.class);
+                Intent intent = new Intent(view.getContext(), SwimAndCoachAns.class);
                 startActivity(intent);
             }
         });
 
-        //The admin button on the main page connects to the terms/conditions page.
-        final Button btn2 = findViewById(R.id.adminChoiceButton);
+        final Button btn2 = findViewById(R.id.iAmACoach);
         btn2.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), adminLogin.class);
+                Intent intent = new Intent(view.getContext(), coachLogin.class);
                 startActivity(intent);
             }
         });
-
-    }}
+    }
+}
