@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SwimAndCoachAns"></activity> -->
+        <activity android:name=".adminLogin"></activity> -->
     </application>
 
 </manifest>
