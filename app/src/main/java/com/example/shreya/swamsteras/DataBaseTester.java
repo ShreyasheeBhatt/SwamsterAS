@@ -15,8 +15,8 @@ public class DataBaseTester {
         races.add(free50);
         races.add(free200);
         Time time = new Time( 9, 3, 51);
-        Event man = new Event("hello", time, races);
-        System.out.println(man.getEventName());
+//        Event man = new Event("hello", time, races);
+//        System.out.println(man.getEventName());
         DataBaser data = new DataBaser();
         String test = data.getTest();
         System.out.println(data.bigTest());
