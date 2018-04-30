@@ -22,7 +22,7 @@ public class DataBaser {
     }
 
     public String bigTest() {
-       return "test";
+        return "test";
     }
 
     public String getTest() {
@@ -32,8 +32,8 @@ public class DataBaser {
         eventRef.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-               test = dataSnapshot.getValue(String.class);
-               Log.d ("charles", "read");
+                test = dataSnapshot.getValue(String.class);
+                Log.d ("charles", "read");
             }
 
             @Override
