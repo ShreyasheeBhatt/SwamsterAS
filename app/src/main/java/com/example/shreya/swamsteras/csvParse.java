@@ -50,7 +50,7 @@ public class csvParse extends AppCompatActivity
                 e.setEventTime(null);
                 e.setNames(s);
                 e.setRaces(r);
-                e.addRaces(new Race(fields[0],Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0));
+                e.addRaces(new Race(fields[0],Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, (fields[4]+" " + fields[5])));
                 e.addNames((fields[4]+" " + fields[5]));
                 events.add(e);
             }

@@ -11,13 +11,13 @@ public class Race
     private double time;
     private String swimmer;
 
-    public Race(String eventName, int heatNum, int laneNum, double timeSwam, String swi)
+    public Race(String eventName, int heatNum, int laneNum, double timeSwam, String swim)
     {
         event = eventName;
         heat = heatNum;
         lane = laneNum;
         time = timeSwam;
-        swimmer = swi;
+        swimmer = swim;
     }
 
     public Race(){}
