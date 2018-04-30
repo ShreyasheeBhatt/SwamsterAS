@@ -36,7 +36,6 @@ public class SwimAndCoachAns extends AppCompatActivity {
     String firstName = first.getText().toString();
     String lastName = last.getText().toString();
 
-
 //    dropdown.setAdapter(adapter);
 }
 
