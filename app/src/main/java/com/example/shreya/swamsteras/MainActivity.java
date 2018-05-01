@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //The swimmer/coach button on the main page connects to the login page.
-        final Button swimCoachButton = findViewById(R.id.swimmerChoiceButton2);
+        final Button swimCoachButton = findViewById(R.id.swimmerChoiceButton);
         swimCoachButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), coachOrSwimmer.class);
