@@ -13,17 +13,23 @@ public class coachOrSwimmer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coach_or_swimmer);
 
-        final Button btn = findViewById(R.id.iAmASwimmer);
-        btn.setOnClickListener(new View.OnClickListener(){
-
+        final Button swimButton = findViewById(R.id.swimButton);
+        swimButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), SwimAndCoachAns.class);
                 startActivity(intent);
             }
         });
+//        final Button swimCoachButton = findViewById(R.id.swimmerChoiceButton2);
+//        swimCoachButton.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View view) {
+//                Intent intent = new Intent(view.getContext(), coachOrSwimmer.class);
+//                startActivity(intent);
+//            }
+//        });
 
-        final Button btn2 = findViewById(R.id.iAmACoach);
-        btn2.setOnClickListener(new View.OnClickListener(){
+        final Button coachButton = findViewById(R.id.coachButton);
+        coachButton.setOnClickListener(new View.OnClickListener(){
 
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), coachLogin.class);
