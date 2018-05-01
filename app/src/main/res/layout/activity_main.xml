@@ -30,7 +30,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="adminButton"
                 android:text="@string/AdminButton"
                 tools:layout_editor_absoluteX="27dp"
                 tools:layout_editor_absoluteY="145dp" />
@@ -41,7 +40,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="swimCoachButton"
                 android:text="@string/SwimmerCoachButton"
                 tools:layout_editor_absoluteX="208dp"
                 tools:layout_editor_absoluteY="145dp" />
