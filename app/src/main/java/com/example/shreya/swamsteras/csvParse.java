@@ -18,16 +18,46 @@ import java.util.ArrayList;
 public class csvParse extends AppCompatActivity
 {
     private ArrayList<Event> events;
+    private ArrayList<Swimmer> swimmers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         events = new ArrayList<Event>();
+        swimmers = new ArrayList<Swimmer>();
         readEventData();
+        readSwimmerData();
         Log.d("csvParse","Event: " + events.get(0).getEventName());
         for (Event event : events)
-            Log.d("csvParse", "\nTime: " + event.getEventTime() + " " + stuffToString(event.getRaces().toString()) + " \n\tName: " + stuffToString(event.getNames()));
+            Log.d("csvParseE", "\nTime: " + event.getEventTime() + " " + stuffToString(event.getRaces().toString()) + " \n\tName: " + stuffToString(event.getNames()));
+        for (Swimmer swimmer: swimmers)
+            Log.d("csvParseS", swimmer.toString());
+    }
+
+    public void readSwimmerData()
+    {
+        //Read the data from the file
+        InputStream is = getResources().openRawResource(R.raw.data);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+        String line = "";
+        try
+        {
+            while ((line = reader.readLine()) != null)
+            {
+                //Split line by ","
+                String[] fields = line.split(",");
+                ArrayList<Race> races = new ArrayList<>();
+                Swimmer s = new Swimmer(fields[10],fields[9],Integer.parseInt(fields[8]),fields[7],races);
+                swimmers.add(s);
+            }
+        }
+
+        catch (IOException ex)
+        {
+            Log.d("csvParseSwim", "Error reading data from file on line " + line);
+        }
     }
 
     public void readEventData()
@@ -53,12 +83,17 @@ public class csvParse extends AppCompatActivity
                 e.addRaces(new Race(fields[0],Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, (fields[4]+" " + fields[5])));
                 e.addNames((fields[4]+" " + fields[5]));
                 events.add(e);
+                for(Swimmer swimmer: swimmers)
+                {
+                    if (swimmer.getFirstName().contains(fields[4]))
+                        swimmer.addRace(new Race(fields[0],Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, (fields[4]+ " " + fields[5])));
+                }
             }
         }
 
         catch (IOException ex)
         {
-            Log.d("csvParse", "Error reading data from file on line " + line);
+            Log.d("csvParseEvent", "Error reading data from file on line " + line);
         }
     }
 

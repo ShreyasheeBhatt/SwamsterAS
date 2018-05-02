@@ -162,7 +162,7 @@ public class Swimmer {
     public String getRaces()
     {
         String list = Arrays.toString(races.toArray()).replace(",", "").replace("[", "").replace("]", "");
-        return list.substring(1,list.length());
+        return list.substring(0,list.length());
     }
     /**
      * Converts com.example.shreya.swamsteras.Swimmer object to a string.
