@@ -20,6 +20,7 @@
         <activity android:name=".adminLogin" />
         <activity android:name=".coachLogin" />
         <activity android:name=".coachOrSwimmer" />
+        <activity android:name=".FirebasePopulator"></activity>
         <activity android:name=".TimeUpdate"></activity>
     </application>
 
