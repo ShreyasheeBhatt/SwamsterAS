@@ -17,7 +17,7 @@
     <string name="coachTeamAsk">Select Your Team:</string>
     <string name="iAmASwimmer">I am a Swimmer</string>
     <string name="iAmACoach">I am a Coach</string>
-    <string-array name="schools">
+    <string-array name="meets">
         <item>Mams</item>
         <item>Auburn</item>
         <item>Westboro</item>
