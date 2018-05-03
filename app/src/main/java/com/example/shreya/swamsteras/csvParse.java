@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.util.ArrayList;
 
 /**
@@ -26,8 +27,8 @@ public class csvParse extends AppCompatActivity
         super.onCreate(savedInstanceState);
         events = new ArrayList<Event>();
         swimmers = new ArrayList<Swimmer>();
-        readEventData();
         readSwimmerData();
+        readEventData();
         Log.d("csvParse","Event: " + events.get(0).getEventName());
         for (Event event : events)
             Log.d("csvParseE", "\nTime: " + event.getEventTime() + " " + stuffToString(event.getRaces().toString()) + " \n\tName: " + stuffToString(event.getNames()));
@@ -48,9 +49,14 @@ public class csvParse extends AppCompatActivity
             {
                 //Split line by ","
                 String[] fields = line.split(",");
+                Log.d("csvParseFieldLength", String.valueOf(fields.length));
                 ArrayList<Race> races = new ArrayList<>();
-                Swimmer s = new Swimmer(fields[10],fields[9],Integer.parseInt(fields[8]),fields[7],races);
-                swimmers.add(s);
+                if(fields[9].equals(""))
+                    break;
+                else {
+                    Swimmer s = new Swimmer(fields[10], fields[9], Integer.parseInt(fields[8]), fields[7], races);
+                    swimmers.add(s);
+                }
             }
         }
 
@@ -85,7 +91,7 @@ public class csvParse extends AppCompatActivity
                 events.add(e);
                 for(Swimmer swimmer: swimmers)
                 {
-                    if (swimmer.getFirstName().contains(fields[4]))
+                    if (swimmer.getFirstName().equals(fields[4]) && swimmer.getLastName().equals(fields[5]))
                         swimmer.addRace(new Race(fields[0],Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, (fields[4]+ " " + fields[5])));
                 }
             }
