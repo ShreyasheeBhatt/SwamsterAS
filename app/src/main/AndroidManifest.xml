@@ -19,7 +19,8 @@
         <activity android:name=".SwimAndCoachAns" />
         <activity android:name=".adminLogin" />
         <activity android:name=".coachLogin" />
-        <activity android:name=".coachOrSwimmer"/>
+        <activity android:name=".coachOrSwimmer" />
+        <activity android:name=".TimeUpdate"></activity>
     </application>
 
 </manifest>
