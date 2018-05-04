@@ -1,6 +1,7 @@
 package com.example.shreya.swamsteras; /**
  * Created by Shreya on 3/28/2018.
  */
+import java.sql.Time;
 import java.util.*;
 
 public class Race
@@ -9,18 +10,19 @@ public class Race
     private int heat;
     private int lane;
     private double time;
+    private Time startTime;
     private String swimmer;
 
-    public Race(String eventName, int heatNum, int laneNum, double timeSwam, String swim)
+    public Race(String eventName, int heatNum, int laneNum, double timeSwam, Time timeStart, String swim)
     {
         event = eventName;
         heat = heatNum;
         lane = laneNum;
         time = timeSwam;
+        startTime = timeStart;
         swimmer = swim;
     }
 
-    public Race(){}
 
     /**
      * Gets the event of the race.
@@ -59,9 +61,17 @@ public class Race
      * Gets the time it took to swim the race.
      * @return time
      */
-    public double getTime()
+    public double getSwimTime()
     {
         return time;
+    }
+
+    /**
+     *
+     */
+    public Time getStartTime()
+    {
+        return startTime;
     }
 
     /**
@@ -69,10 +79,17 @@ public class Race
      * @param timeSwam the time it took to swim the race
      * @return time
      */
-    public double changeTime(double timeSwam)
+    public double changeSwimTime(double timeSwam)
     {
         time = timeSwam;
         return time;
+    }
+
+    public Time setStartTime(int hours, int minutes)
+    {
+        startTime.setHours(hours);
+        startTime.setMinutes(minutes);
+        return startTime;
     }
 
     /**
