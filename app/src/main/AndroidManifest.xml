@@ -22,6 +22,7 @@
         <activity android:name=".coachOrSwimmer" />
         <activity android:name=".FirebasePopulator"></activity>
         <activity android:name=".TimeUpdate"></activity>
+        <activity android:name=".UpdateTime"></activity>
     </application>
 
 </manifest>

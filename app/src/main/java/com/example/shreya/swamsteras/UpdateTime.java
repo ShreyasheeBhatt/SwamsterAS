@@ -11,10 +11,14 @@ import java.util.ArrayList;
  * Created by Shreya on 5/4/18.
  */
 
-public class UpdateTime extends AppCompatActivity {
+public class UpdateTime extends AppCompatActivity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_update_time);
+        Log.d("TimeUpdate", "Entered UpdateTime");
 
         Bundle bundle = getIntent().getExtras();
         String eventName = bundle.getString("eventName");
@@ -23,16 +27,19 @@ public class UpdateTime extends AppCompatActivity {
         int startMinute = bundle.getInt("startMinute");
         int raceMinutes = bundle.getInt("raceMinutes");
         int raceSeconds = bundle.getInt("raceSeconds");
+        Log.d("TimeUpdate", "Initiated intent variables");
 
         ArrayList<Event> events = null;
         ArrayList<Swimmer> swimmers = null;
         ArrayList<Race> races = null;
+        Log.d("TimeUpdate", "Initiated ArrayLists");
 
-        csvParse csv = new csvParse();
+        csvParse csv = null;
+        Log.d("TimeUpdate", "Initialized csvParse object");
         events = csv.getEvents();
-        Log.d("csvParse", events.toString());
+        Log.d("csvParse", "Got events?" + events.toString());
         swimmers = csv.getSwimmers();
-        Log.d("csvParse", swimmers.toString());
+        Log.d("csvParse", "Got swimmers?" + swimmers.toString());
         int heat;
 
         for(Swimmer swimmer : swimmers)
