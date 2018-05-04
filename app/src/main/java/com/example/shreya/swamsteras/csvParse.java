@@ -34,6 +34,14 @@ public class csvParse extends AppCompatActivity {
             Log.d("csvParseS", getSwimmers().toString());
     }
 
+    public csvParse() {
+        events = new ArrayList<Event>();
+        swimmers = new ArrayList<Swimmer>();
+        readSwimmerData();
+        readEventData();
+        events = getEvents();
+        swimmers = getSwimmers();
+    }
     public void readSwimmerData() {
         //Read the data from the file
         InputStream is = getResources().openRawResource(R.raw.data);
