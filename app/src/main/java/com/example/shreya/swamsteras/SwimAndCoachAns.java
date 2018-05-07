@@ -1,20 +1,19 @@
 package com.example.shreya.swamsteras;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SwimAndCoachAns extends AppCompatActivity {
@@ -23,6 +22,14 @@ public class SwimAndCoachAns extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swim_and_coach_ans);
+
+        final Button finishButton = findViewById(R.id.finish);
+        finishButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), EventsSwimmer.class);
+                startActivity(intent);
+            }
+        });
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference teamRef = database.getReference("meet");
@@ -66,13 +73,5 @@ public class SwimAndCoachAns extends AppCompatActivity {
     String firstName = first.getText().toString();
     String lastName = last.getText().toString();
 
-//    dropdown.setAdapter(adapter);
 }
-
-//    @Override
-//    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//        String text = parent.getItemAtPosition(position).toString();
-//        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
-//    }
-
 }
