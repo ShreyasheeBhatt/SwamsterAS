@@ -20,15 +20,17 @@
         android:layout_width="243dp"
         android:layout_height="36dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:text="Approximate Time per Race (Format: minutes:seconds.milliseconds)"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startTime" />
 
     <TextView
         android:id="@+id/eventNameLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="77dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:text="Event Name"
@@ -37,12 +39,15 @@
 
     <TextView
         android:id="@+id/startTimeLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="133dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
         android:text="Start Time for Event:"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventName" />
         app:layout_constraintBottom_toTopOf="@+id/startTimeLabel" />
         tools:layout_editor_absoluteY="217dp" />
 
@@ -50,7 +55,9 @@
         android:id="@+id/startTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -67,11 +74,11 @@
     <TextView
         android:id="@+id/instructionsTimeUpdate"
         android:layout_width="272dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="28dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
         android:text="In order to update the times for notifications, fill in the data below."
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -116,13 +123,13 @@
         app:layout_constraintStart_toEndOf="@+id/minLabel" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/eventName"
         android:layout_width="471dp"
         android:layout_height="24dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/startTimeLabel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eventNameLabel" />
 </android.support.constraint.ConstraintLayout>
