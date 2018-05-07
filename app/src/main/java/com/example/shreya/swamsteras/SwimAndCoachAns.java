@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
 public class SwimAndCoachAns extends AppCompatActivity {
 
@@ -34,11 +35,38 @@ public class SwimAndCoachAns extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference teamRef = database.getReference("meet");
 
-        ArrayList<String> teams = new ArrayList<>();
+/*       ArrayList<String> teams = new ArrayList<>();
         teams.add("Aria");
         teams.add("Shreya");
         teams.add("Ellie");
         teamRef.setValue(teams);
+
+        ArrayList<String> swams = new ArrayList<>();
+        swams.add("Black");
+        swams.add("Brown");
+        swams.add("White");
+        teamRef.setValue(swams);
+
+        ArrayList<ArrayList<String>> combo = new ArrayList<>();
+        combo.add(swams);
+        combo.add(teams);
+        teamRef.setValue(combo);
+
+        Race fly50 = new Race("15 & over 50 meter Butterly", 9, 4, 0, null, "Ayy");
+        Race free50 = new Race("15 & over 50 meter Freestyle", 12, 2, 0, null, "Lmao");
+        Race free200 = new Race("15 & over 200 meter Freestyle", 3, 5, 0, null, "Aeiou");
+        ArrayList<Race> races = new ArrayList<Race>();
+        races.add(fly50);
+        races.add(free50);
+        races.add(free200);
+        Swimmer shreya = new Swimmer("Bhatt","Shreya", 16, "Evo", races);
+        Swimmer emma = new Swimmer("Kudej","Emma", 16, "Evo", races);
+        ArrayList<Swimmer> swimarray = new ArrayList<>();
+        swimarray.add(shreya);
+        swimarray.add(emma);
+        teamRef.setValue(swimarray);
+*/
+
 
         teamRef.addValueEventListener(new ValueEventListener() {
             @Override
