@@ -23,6 +23,7 @@
         <activity android:name=".FirebasePopulator"></activity>
         <activity android:name=".TimeUpdate"></activity>
         <activity android:name=".UpdateTime"></activity>
+        <activity android:name=".EventsSwimmer"></activity>
     </application>
 
 </manifest>
