@@ -40,21 +40,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="48dp"
         android:text="Start Time for Event:"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventName" />
-
-    <EditText
-        android:id="@+id/eventName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventNameLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintBottom_toTopOf="@+id/startTimeLabel" />
+        tools:layout_editor_absoluteY="217dp" />
 
     <EditText
         android:id="@+id/startTime"
@@ -124,4 +114,15 @@
         android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/minLabel"
         app:layout_constraintStart_toEndOf="@+id/minLabel" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="471dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/startTimeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventNameLabel" />
 </android.support.constraint.ConstraintLayout>
