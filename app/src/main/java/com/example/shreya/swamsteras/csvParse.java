@@ -16,35 +16,22 @@ import java.util.ArrayList;
  * Created by Shreya on 4/23/18.
  */
 
-public class csvParse extends AppCompatActivity {
+public class csvParse {
     private ArrayList<Event> events;
     private ArrayList<Swimmer> swimmers;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        events = new ArrayList<Event>();
-        swimmers = new ArrayList<Swimmer>();
-        readSwimmerData();
-        readEventData();
-        Log.d("csvParse", "Event: " + events.get(0).getEventName());
-        for (Event event : events)
-            Log.d("csvParseE", getEvents().toString());
-        for (Swimmer swimmer : swimmers)
-            Log.d("csvParseS", getSwimmers().toString());
-    }
 
-    public csvParse() {
+    public csvParse(InputStream is) {
         events = new ArrayList<Event>();
         swimmers = new ArrayList<Swimmer>();
-        readSwimmerData();
-        readEventData();
+        readSwimmerData(is);
+        readEventData(is);
         events = getEvents();
         swimmers = getSwimmers();
     }
-    public void readSwimmerData() {
+
+    public void readSwimmerData(InputStream is) {
         //Read the data from the file
-        InputStream is = getResources().openRawResource(R.raw.data);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
         String line = "";
@@ -59,6 +46,7 @@ public class csvParse extends AppCompatActivity {
                 else {
                     Swimmer s = new Swimmer(fields[10], fields[9], Integer.parseInt(fields[8]), fields[7], races);
                     swimmers.add(s);
+                    s.addRace(new Race(fields[0], Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, null, (fields[4] + " " + fields[5])));
                 }
             }
         } catch (IOException ex) {
@@ -66,9 +54,8 @@ public class csvParse extends AppCompatActivity {
         }
     }
 
-    public void readEventData() {
+    public void readEventData(InputStream is) {
         //Read the data from the file
-        InputStream is = getResources().openRawResource(R.raw.data);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
         String line = "";
