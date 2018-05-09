@@ -25,12 +25,12 @@ public class EventsSwimmer extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter<String>(lv.getContext(),android.R.layout.simple_list_item_1,list);
         lv.setAdapter(adapter);
 
-        final ListView lv2 = (ListView) findViewById(R.id.listIndEvents);
+        final ListView lv2 = (ListView) findViewById(R.id.listIndTimes);
         final List<String> list2 = new ArrayList();
         list2.add("front");
         list2.add("left");
         list2.add("blue");
-        ArrayAdapter adapter2 = new ArrayAdapter<String>(lv.getContext(),android.R.layout.simple_list_item_1,list);
+        ArrayAdapter adapter2 = new ArrayAdapter<String>(lv2.getContext(),android.R.layout.simple_list_item_1,list2);
         lv2.setAdapter(adapter2);
     }
 
