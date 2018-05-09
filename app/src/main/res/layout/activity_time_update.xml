@@ -76,7 +76,7 @@
         android:layout_width="272dp"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
-        android:text="In order to update the times for notifications, fill in the data below."
+        android:text= "In order to update the times for notifications, fill in the data below."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
