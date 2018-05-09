@@ -30,6 +30,7 @@
         android:layout_marginTop="48dp"
         android:text="Events:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/listIndEvents"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.125"

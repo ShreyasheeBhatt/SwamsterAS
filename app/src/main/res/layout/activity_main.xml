@@ -33,6 +33,7 @@
                 android:layout_weight="1"
                 android:text="@string/AdminButton"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textSize="18sp"
                 tools:layout_editor_absoluteX="27dp"
                 tools:layout_editor_absoluteY="145dp" />
 
@@ -43,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/SwimmerCoachButton"
+                android:textSize="18sp"
                 tools:layout_editor_absoluteX="208dp"
                 tools:layout_editor_absoluteY="145dp" />
         </LinearLayout>
@@ -56,6 +58,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/WelcomeText"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/black"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -15,6 +15,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="128dp"
         android:text="I am a swimmer"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,6 +28,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:text="I am a coach"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/swimButton" />
