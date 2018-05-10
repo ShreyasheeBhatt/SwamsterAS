@@ -24,10 +24,16 @@ public class SwimAndCoachAns extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swim_and_coach_ans);
 
+        final Intent intent = new Intent(this, EventsSwimmer.class);
         final Button finishButton = findViewById(R.id.finish);
         finishButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), EventsSwimmer.class);
+                TextView first = findViewById(R.id.firstText);
+                TextView last = findViewById(R.id.firstText);
+                String firstName = first.getText().toString();
+                String lastName = last.getText().toString();
+                intent.putExtra("firstName", firstName);
+                intent.putExtra("lastName", lastName);
                 startActivity(intent);
             }
         });
@@ -63,15 +69,7 @@ public class SwimAndCoachAns extends AppCompatActivity {
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown3.setAdapter(adapter3);
 
-        TextView first = findViewById(R.id.firstText);
-        TextView last = findViewById(R.id.firstText);
-        String firstName = first.getText().toString();
-        String lastName = last.getText().toString();
 
-        Intent intent = new Intent(this, EventsSwimmer.class);
-        intent.putExtra("firstName", firstName);
-        intent.putExtra("lastName", lastName);
-        startActivity(intent);
 
     }
 }

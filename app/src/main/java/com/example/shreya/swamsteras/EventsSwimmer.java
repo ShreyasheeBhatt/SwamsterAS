@@ -38,7 +38,7 @@ public class EventsSwimmer extends AppCompatActivity {
         list2.add("blue");
         ArrayAdapter adapter2 = new ArrayAdapter<String>(lv2.getContext(),android.R.layout.simple_list_item_1,list2);
         lv2.setAdapter(adapter2);
-//
+
 //        Bundle bundle = getIntent().getExtras();
 //        String firstName = bundle.getString("firstName");
 //        String lastName = bundle.getString("lastName");
@@ -57,8 +57,8 @@ public class EventsSwimmer extends AppCompatActivity {
 //                races = swimmer.getRaceList();
 //                for(Race race: races)
 //                {
-                    int startHour = 20;
-                    int startMinute = 12;
+                    int startHour = 18;
+                    int startMinute = 25;
                     startNotification(startHour, startMinute);
     }
     public void startNotification(int startHour, int startMinute)
