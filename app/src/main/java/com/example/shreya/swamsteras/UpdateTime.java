@@ -58,7 +58,7 @@ public class UpdateTime extends AppCompatActivity
                 if(eventName.equals(race.getEvent()))
                 {
                     heat = race.getHeat();
-                    raceMinutes+=(raceMinutes*(heat-1));
+                    raceMinutes+=(raceMinutes*(heat-1)-5);
                     raceSeconds+=(raceSeconds*(heat-1));
                     raceMinutes+=((raceSeconds*heat)%60);
                     if(startMinute+(raceMinutes*heat-1)<60)
@@ -66,24 +66,24 @@ public class UpdateTime extends AppCompatActivity
                         startMinute += (raceMinutes * heat);
                         Log.d("TimeUpdate", "1");
                     }
-                    else if(startMinute+(raceMinutes*heat-1)==60)
+                    else if(startMinute+((raceMinutes*heat-1)-5)==60)
                     {
                         startMinute = 0;
                         startHour+=1;
                         startHour=startHour%24;
                         Log.d("TimeUpdate", "2");
                     }
-                    else if(startMinute+(raceMinutes*heat-1)>60)
+                    else if(startMinute+((raceMinutes*heat-1)-5)>60)
                     {
                         if(startMinute+(raceMinutes*heat-1)<120) {
-                            startMinute = startMinute+(raceMinutes*heat-1)-60;
+                            startMinute = startMinute+(raceMinutes*heat-1)-65;
                             startHour+=1;
                             startHour=startHour%24;
                             Log.d("TimeUpdate", "3");
                         }
                         else
                         {
-                            startMinute = startMinute+(raceMinutes*heat-1)-120;
+                            startMinute = startMinute+(raceMinutes*heat-1)-125;
                             startHour+=2;
                             startHour=startHour%24;
                             Log.d("TimeUpdate", "4");

@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
 public class SwimAndCoachAns extends AppCompatActivity {
 
@@ -24,7 +25,6 @@ public class SwimAndCoachAns extends AppCompatActivity {
         setContentView(R.layout.activity_swim_and_coach_ans);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-
         DatabaseReference teamRef = database.getReference("meet");
 
         teamRef.addValueEventListener(new ValueEventListener() {
@@ -64,11 +64,6 @@ public class SwimAndCoachAns extends AppCompatActivity {
             }
         });
 
-    Spinner dropdown3 = findViewById(R.id.ageChoices);
-    ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.ages, android.R.layout.simple_spinner_item);
-    adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    dropdown3.setAdapter(adapter3);
-
     TextView first = findViewById(R.id.firstText);
     TextView last = findViewById(R.id.firstText);
     final String firstName = first.getText().toString();
@@ -86,5 +81,5 @@ public class SwimAndCoachAns extends AppCompatActivity {
             }
         });
 
-}
+    }
 }
