@@ -12,6 +12,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -19,12 +20,11 @@
         <activity android:name=".adminLogin" />
         <activity android:name=".coachLogin" />
         <activity android:name=".coachOrSwimmer" />
-        <activity android:name=".FirebasePopulator"></activity>
-        <activity android:name=".TimeUpdate"></activity>
-        <activity android:name=".UpdateTime"></activity>
-        <activity android:name=".EventsSwimmer"></activity>
-
+        <activity android:name=".FirebasePopulator" />
+        <activity android:name=".TimeUpdate" />
+        <activity android:name=".UpdateTime" />
+        <activity android:name=".EventsSwimmer" />
+        <activity android:name=".coachSwimmers"></activity>
     </application>
-
 
 </manifest>
