@@ -33,6 +33,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/listIndEvents"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.015"

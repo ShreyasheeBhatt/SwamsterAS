@@ -17,6 +17,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,6 +32,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/teamChoices" />
 
@@ -45,6 +47,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/meetChoices" />
 
@@ -53,12 +56,13 @@
         android:layout_width="190dp"
         android:layout_height="23dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:text="@string/LastNameAsk"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstInput"
         tools:ignore="MissingConstraints" />
@@ -74,6 +78,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ageChoices"
         tools:ignore="MissingConstraints" />

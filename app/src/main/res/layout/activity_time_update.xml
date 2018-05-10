@@ -14,6 +14,7 @@
         android:text="seconds"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/secondsPerRace"
         app:layout_constraintStart_toEndOf="@+id/secondsPerRace" />
 
@@ -23,9 +24,10 @@
         android:layout_height="52dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="48dp"
-        android:text="Approximate Time per Race (Format: minutes:seconds.milliseconds)"
+        android:text="Approximate Time per Race"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startTime" />
 
@@ -39,6 +41,7 @@
         android:text="Event Name"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/instructionsTimeUpdate" />
 
@@ -51,6 +54,7 @@
         android:text="Start Time for Event:"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eventNames" />
 
@@ -64,6 +68,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eventNameLabel" />
 
@@ -77,6 +82,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startTimeLabel" />
 
@@ -97,6 +103,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/black"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -120,6 +127,7 @@
         android:text="minutes"
         android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/minutesPerRace"
         app:layout_constraintStart_toEndOf="@+id/minutesPerRace" />
 
@@ -132,6 +140,7 @@
         android:ems="10"
         android:inputType="number"
         android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/raceTimeLabel" />
 
@@ -142,6 +151,7 @@
         android:ems="10"
         android:inputType="number"
         android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/minLabel"
         app:layout_constraintStart_toEndOf="@+id/minLabel" />
 
