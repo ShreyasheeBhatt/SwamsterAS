@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +38,35 @@ public class EventsSwimmer extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference swimRef = database.getReference("meet");
 
-       // swimRef.child("meet").orderByChild("")
+       swimRef.child("meet").orderByChild("lastName").equalTo(lastName).addChildEventListener(new ChildEventListener() {
+           @Override
+           public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+           }
+
+           @Override
+           public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+           }
+
+           @Override
+           public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+           }
+
+           @Override
+           public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+           }
+
+           @Override
+           public void onCancelled(DatabaseError databaseError) {
+
+           }
+       });
+       {
+
+        }
 
         swimRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -87,7 +116,7 @@ public class EventsSwimmer extends AppCompatActivity {
 //            {
 //                races = swimmer.getRaceList();
 //                for(Race race: races)
-                {
+ /*               {
                     int startHour = 20;
                     int startMinute = 12;
 //                    race.setStartHour(startHour);
@@ -101,6 +130,7 @@ public class EventsSwimmer extends AppCompatActivity {
                     AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                     alarmManager.set(AlarmManager.RTC_WAKEUP, currentTimeInMillis, PendingIntent.getBroadcast(this, 2, intent, PendingIntent.FLAG_UPDATE_CURRENT));
                 }
+                */
 //            }
 //        }
 //    }
