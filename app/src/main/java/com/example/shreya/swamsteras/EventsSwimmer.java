@@ -38,33 +38,33 @@ public class EventsSwimmer extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference swimRef = database.getReference("meet");
 
-       swimRef.child("meet").orderByChild("lastName").equalTo(lastName).addChildEventListener(new ChildEventListener() {
-           @Override
-           public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+        swimRef.child("meet").orderByChild("lastName").equalTo(lastName).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-           }
+            }
 
-           @Override
-           public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-           }
+            }
 
-           @Override
-           public void onChildRemoved(DataSnapshot dataSnapshot) {
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
 
-           }
+            }
 
-           @Override
-           public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
-           }
+            }
 
-           @Override
-           public void onCancelled(DatabaseError databaseError) {
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-           }
-       });
-       {
+            }
+        });
+        {
 
         }
 
@@ -97,6 +97,7 @@ public class EventsSwimmer extends AppCompatActivity {
         list2.add("blue");
         ArrayAdapter adapter2 = new ArrayAdapter<String>(lv2.getContext(), android.R.layout.simple_list_item_1, list2);
         lv2.setAdapter(adapter2);
+
     }
 //
 //        Bundle bundle = getIntent().getExtras();
@@ -116,7 +117,8 @@ public class EventsSwimmer extends AppCompatActivity {
 //            {
 //                races = swimmer.getRaceList();
 //                for(Race race: races)
- /*               {
+
+        /*               {
                     int startHour = 20;
                     int startMinute = 12;
 //                    race.setStartHour(startHour);
@@ -134,4 +136,3 @@ public class EventsSwimmer extends AppCompatActivity {
 //            }
 //        }
 //    }
-}

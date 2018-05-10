@@ -3,7 +3,7 @@
     <string name="AdminButton">Administrator</string>
     <string name="SwimmerCoachButton">Swimmer/Coach</string>
     <string name="WelcomeText">SWAMSTER: The Swim Meet Master</string>
-    <color name="front"> #4d4dff</color>
+    <color name="front">#4d4dff</color>
     <string name="enterSwimId">Enter Swimmmer Id Number</string>
     <string name="MeetAsk">Select your meet:</string>
     <string name="AgeAsk">Select your age:</string>
