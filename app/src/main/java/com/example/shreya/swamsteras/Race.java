@@ -10,16 +10,18 @@ public class Race
     private int heat;
     private int lane;
     private double time;
-    private Time startTime;
+    private int startHour;
+    private int startMinutes;
     private String swimmer;
 
-    public Race(String eventName, int heatNum, int laneNum, double timeSwam, Time timeStart, String swim)
+    public Race(String eventName, int heatNum, int laneNum, double timeSwam, int hStart, int mStart, String swim)
     {
         event = eventName;
         heat = heatNum;
         lane = laneNum;
         time = timeSwam;
-        startTime = timeStart;
+        startHour = hStart;
+        startMinutes = mStart;
         swimmer = swim;
     }
 
@@ -69,9 +71,14 @@ public class Race
     /**
      *
      */
-    public Time getStartTime()
+    public int getStartHour()
     {
-        return startTime;
+        return startHour;
+    }
+
+    public int getStartMinutes()
+    {
+        return startMinutes;
     }
 
     /**
@@ -85,11 +92,14 @@ public class Race
         return time;
     }
 
-    public Time setStartTime(int hours, int minutes)
+    public void setStartHour(int hours)
     {
-        startTime.setHours(hours);
-        startTime.setMinutes(minutes);
-        return startTime;
+        startHour = hours;
+    }
+
+    public void setStartMinutes(int minutes)
+    {
+        startMinutes = minutes;
     }
 
     /**

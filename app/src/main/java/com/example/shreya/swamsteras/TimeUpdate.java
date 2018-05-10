@@ -36,9 +36,10 @@ public class TimeUpdate extends AppCompatActivity
                 Log.d("TimeUpdate", "Parsed Text from Views");
 
                 String eventName = name.getText().toString();
-                Time startTime = Time.valueOf(start.getText().toString());
-                int startHour = startTime.getHours();
-                int startMinute = startTime.getMinutes();
+                String[] time = start.getText().toString().split(":");
+                Log.d("tu",time[1]);
+                int startHour = Integer.parseInt(time[0]);
+                int startMinute = Integer.parseInt(time[1]);
                 int raceMinutes = Integer.parseInt(mins.getText().toString());
                 int raceSeconds = Integer.parseInt(secs.getText().toString());
                 Log.d("TimeUpdate", "Parsed Information");
@@ -48,7 +49,6 @@ public class TimeUpdate extends AppCompatActivity
 
                 Intent intent = new Intent(view.getContext(), UpdateTime.class);
                 intent.putExtra("eventName", eventName);
-                intent.putExtra("startTime", startTime.toString());
                 intent.putExtra("startHour", startHour);
                 intent.putExtra("startMinute", startMinute);
                 intent.putExtra("raceMinutes", raceMinutes);

@@ -7,17 +7,23 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class adminLogin extends AppCompatActivity {
+public class adminLogin extends AppCompatActivity
+{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_login);
 
         final Button timeButton = findViewById(R.id.agree);
-        timeButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
+        timeButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(view.getContext(), TimeUpdate.class);
                 startActivity(intent);
             }
-        });}}
+        });
+    }
+}

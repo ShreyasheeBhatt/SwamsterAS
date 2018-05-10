@@ -46,7 +46,7 @@ public class csvParse {
                 else {
                     Swimmer s = new Swimmer(fields[10], fields[9], Integer.parseInt(fields[8]), fields[7], races);
                     swimmers.add(s);
-                    s.addRace(new Race(fields[0], Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, null, (fields[4] + " " + fields[5])));
+                    s.addRace(new Race(fields[0], Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, 0, 0, (fields[4] + " " + fields[5])));
                 }
             }
         } catch (IOException ex) {
@@ -70,12 +70,12 @@ public class csvParse {
                 e.setEventTime(null);
                 e.setNames(s);
                 e.setRaces(r);
-                e.addRaces(new Race(fields[0], Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, null, (fields[4] + " " + fields[5])));
+                e.addRaces(new Race(fields[0], Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, 0 , 0, (fields[4] + " " + fields[5])));
                 e.addNames((fields[4] + " " + fields[5]));
                 events.add(e);
                 for (Swimmer swimmer : swimmers) {
                     if (swimmer.getFirstName().equals(fields[4]) && swimmer.getLastName().equals(fields[5]))
-                        swimmer.addRace(new Race(fields[0], Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, null, (fields[4] + " " + fields[5])));
+                        swimmer.addRace(new Race(fields[0], Integer.parseInt(fields[2]), Integer.parseInt(fields[3]), 0, 0, 0, (fields[4] + " " + fields[5])));
                 }
             }
         } catch (IOException ex) {

@@ -86,20 +86,25 @@ public class SwimAndCoachAns extends AppCompatActivity {
             }
         });
 
-    Spinner dropdown = findViewById(R.id.meetChoices);
-    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.meets, android.R.layout.simple_spinner_item);
-    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    dropdown.setAdapter(adapter);
+        Spinner dropdown = findViewById(R.id.meetChoices);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.meets, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropdown.setAdapter(adapter);
 
-    Spinner dropdown3 = findViewById(R.id.ageChoices);
-    ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.ages, android.R.layout.simple_spinner_item);
-    adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    dropdown3.setAdapter(adapter3);
+        Spinner dropdown3 = findViewById(R.id.ageChoices);
+        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.ages, android.R.layout.simple_spinner_item);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropdown3.setAdapter(adapter3);
 
-    TextView first = findViewById(R.id.firstText);
-    TextView last = findViewById(R.id.firstText);
-    String firstName = first.getText().toString();
-    String lastName = last.getText().toString();
+        TextView first = findViewById(R.id.firstText);
+        TextView last = findViewById(R.id.firstText);
+        String firstName = first.getText().toString();
+        String lastName = last.getText().toString();
 
-}
+        Intent intent = new Intent(this, EventsSwimmer.class);
+        intent.putExtra("firstName", firstName);
+        intent.putExtra("lastName", lastName);
+        startActivity(intent);
+
+    }
 }
