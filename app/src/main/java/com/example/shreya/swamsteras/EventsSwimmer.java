@@ -22,8 +22,6 @@ public class EventsSwimmer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events_swimmer);
 
-        // for on data change
-
         final ListView lv = findViewById(R.id.listIndEvents);
         final List<String> list = new ArrayList();
         list.add("backstroke");
@@ -39,7 +37,7 @@ public class EventsSwimmer extends AppCompatActivity {
         list2.add("blue");
         ArrayAdapter adapter2 = new ArrayAdapter<String>(lv2.getContext(),android.R.layout.simple_list_item_1,list2);
         lv2.setAdapter(adapter2);
-//
+
 //        Bundle bundle = getIntent().getExtras();
 //        String firstName = bundle.getString("firstName");
 //        String lastName = bundle.getString("lastName");
