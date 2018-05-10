@@ -65,18 +65,13 @@ public class SwimAndCoachAns extends AppCompatActivity {
 
         TextView first = findViewById(R.id.firstText);
         TextView last = findViewById(R.id.firstText);
-        final String firstName = first.getText().toString();
-        final String lastName = last.getText().toString();
+        String firstName = first.getText().toString();
+        String lastName = last.getText().toString();
 
-        final Button finish = findViewById(R.id.finish);
-        finish.setOnClickListener(new View.OnClickListener(){
+        Intent intent = new Intent(this, EventsSwimmer.class);
+        intent.putExtra("firstName", firstName);
+        intent.putExtra("lastName", lastName);
+        startActivity(intent);
 
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), EventsSwimmer.class);
-                intent.putExtra("firstName", firstName);
-                intent.putExtra("lastName", lastName);
-                startActivity(intent);
-            }
-        });
     }
 }

@@ -4,24 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/water"
     tools:context="com.example.shreya.swamsteras.TimeUpdate">
 
     <TextView
         android:id="@+id/secLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_width="103dp"
+        android:layout_height="26dp"
         android:text="seconds"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/secondsPerRace"
         app:layout_constraintStart_toEndOf="@+id/secondsPerRace" />
 
     <TextView
         android:id="@+id/raceTimeLabel"
-        android:layout_width="243dp"
-        android:layout_height="36dp"
+        android:layout_width="337dp"
+        android:layout_height="52dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="48dp"
-        android:text="Approximate Time per Race (Format: minutes:seconds.milliseconds)"
+        android:text="Approximate Time per Race"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startTime" />
 
@@ -29,9 +35,13 @@
         android:id="@+id/eventNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:text="Event Name"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/instructionsTimeUpdate" />
 
@@ -42,17 +52,23 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="48dp"
         android:text="Start Time for Event:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventName" />
+        app:layout_constraintTop_toBottomOf="@+id/eventNames" />
 
     <EditText
-        android:id="@+id/eventName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/eventNames"
+        android:layout_width="242dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eventNameLabel" />
 
@@ -60,10 +76,13 @@
         android:id="@+id/startTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startTimeLabel" />
 
@@ -76,10 +95,15 @@
 
     <TextView
         android:id="@+id/instructionsTimeUpdate"
-        android:layout_width="272dp"
-        android:layout_height="38dp"
+        android:layout_width="353dp"
+        android:layout_height="92dp"
         android:layout_marginTop="28dp"
         android:text="In order to update the times for notifications, fill in the data below."
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,18 +113,21 @@
         android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="152dp"
         android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/minLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_width="77dp"
+        android:layout_height="27dp"
         android:text="minutes"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/minutesPerRace"
         app:layout_constraintStart_toEndOf="@+id/minutesPerRace" />
 
@@ -112,6 +139,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/raceTimeLabel" />
 
@@ -119,9 +148,20 @@
         android:id="@+id/secondsPerRace"
         android:layout_width="59dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:ems="10"
         android:inputType="number"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/minLabel"
         app:layout_constraintStart_toEndOf="@+id/minLabel" />
+
+    <Spinner
+        android:id="@+id/eventName"
+        android:layout_width="471dp"
+        android:layout_height="21dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventNameLabel" />
 </android.support.constraint.ConstraintLayout>
