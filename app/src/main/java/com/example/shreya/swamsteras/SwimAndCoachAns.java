@@ -49,10 +49,10 @@ public class SwimAndCoachAns extends AppCompatActivity {
         meetRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                ArrayList<String> meetList = (ArrayList<String>) dataSnapshot.getValue();
+                ArrayList<String> swimmerList = (ArrayList<String>) dataSnapshot.getValue();
 
                 final Spinner dropdown2 = findViewById(R.id.meetChoices);
-                ArrayAdapter<String> adapter2 = new ArrayAdapter<>(SwimAndCoachAns.this, android.R.layout.simple_spinner_item, meetList);
+                ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(SwimAndCoachAns.this, android.R.layout.simple_spinner_item, swimmerList);
                 adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 dropdown2.setAdapter(adapter2);
             }

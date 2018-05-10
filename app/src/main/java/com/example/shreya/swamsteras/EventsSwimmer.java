@@ -38,65 +38,28 @@ public class EventsSwimmer extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference swimRef = database.getReference("meet");
 
-        swimRef.child("meet").orderByChild("lastName").equalTo(lastName).addChildEventListener(new ChildEventListener() {
+      /*  swimRef.child("meet").orderByChild("lastName").equalTo(lastName).on("value", function(snapshot) {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //ArrayList<Race> raceList = (ArrayList<Race>) dataSnapshot.getValue();
+
+                //Log.d("charles", raceList.get(0).toString());
+                Log.d("charles", dataSnapshot.getKey());
+
+               //final ListView lv = findViewById(R.id.listIndEvents);
+               //ArrayAdapter adapter = new ArrayAdapter<>(EventsSwimmer.this, android.R.layout.simple_list_item_1, raceList);
+               //lv.setAdapter(adapter);
 
             }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
-        {
+
+            });
+      */  {
 
         }
-
-        swimRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("Error", "Failed to read value.", error.toException());
-            }
-        });
-
-        final ListView lv = findViewById(R.id.listIndEvents);
-        final List<String> list = new ArrayList();
-        list.add("backstroke");
-        list.add("swim");
-        list.add("red");
-        ArrayAdapter adapter = new ArrayAdapter<String>(lv.getContext(), android.R.layout.simple_list_item_1, list);
-        lv.setAdapter(adapter);
-
-
-        final ListView lv2 = findViewById(R.id.listIndTimes);
-        final List<String> list2 = new ArrayList();
-        list2.add("front");
-        list2.add("left");
-        list2.add("blue");
-        ArrayAdapter adapter2 = new ArrayAdapter<String>(lv2.getContext(), android.R.layout.simple_list_item_1, list2);
-        lv2.setAdapter(adapter2);
 
     }
 //
