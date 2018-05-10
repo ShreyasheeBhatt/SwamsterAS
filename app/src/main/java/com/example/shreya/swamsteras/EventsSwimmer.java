@@ -29,7 +29,7 @@ public class EventsSwimmer extends AppCompatActivity {
         list.add("backstroke");
         list.add("swim");
         list.add("red");
-        ArrayAdapter adapter = new ArrayAdapter<String>(lv.getContext(),android.R.layout.simple_list_item_1,list);
+        ArrayAdapter adapter = new ArrayAdapter<String>(lv.getContext(), android.R.layout.simple_list_item_1, list);
         lv.setAdapter(adapter);
 
         final ListView lv2 = findViewById(R.id.listIndTimes);
@@ -37,40 +37,54 @@ public class EventsSwimmer extends AppCompatActivity {
         list2.add("front");
         list2.add("left");
         list2.add("blue");
-        ArrayAdapter adapter2 = new ArrayAdapter<String>(lv2.getContext(),android.R.layout.simple_list_item_1,list2);
+        ArrayAdapter adapter2 = new ArrayAdapter<String>(lv2.getContext(), android.R.layout.simple_list_item_1, list2);
         lv2.setAdapter(adapter2);
 //
 //        Bundle bundle = getIntent().getExtras();
 //        String firstName = bundle.getString("firstName");
 //        String lastName = bundle.getString("lastName");
-//
-//        ArrayList<Swimmer> swimmers = null;
-//        ArrayList<Race> races = null;
-//
-//        InputStream is = getResources().openRawResource(R.raw.data);
-//        csvParse csv = new csvParse(is);
-//        swimmers = csv.getSwimmers();
-//
-//        for(Swimmer swimmer: swimmers)
-//        {
-//            if(firstName.equals(swimmer.getFirstName()))
-//            {
+
+        ArrayList<Swimmer> swimmers = null;
+        ArrayList<Race> races = null;
+
+        InputStream is = getResources().openRawResource(R.raw.data);
+        csvParse csv = new csvParse(is);
+        swimmers = csv.getSwimmers();
+
+        int startHour = 17;
+        int startMinute = 38;
+            startNotification(startHour, startMinute);
+
+//        for (Swimmer swimmer : swimmers) {
+//            if (firstName.equals(swimmer.getFirstName()) && lastName.equals(swimmer.getLastName())) {
 //                races = swimmer.getRaceList();
-//                for(Race race: races)
-//                {
-                    int startHour = 20;
-                    int startMinute = 12;
-//                    race.setStartHour(startHour);
-//                    race.setStartMinutes(startMinute);
-                    Calendar currentTime = Calendar.getInstance();
-                    long currentTimeInMillis = currentTime.getTimeInMillis();
-                    long hourToMillis = startHour * 60 * 60 * 1000;
-                    long minsToMillis = startMinute * 60 * 1000;
-                    currentTimeInMillis += (hourToMillis + minsToMillis);
-                    Intent intent = new Intent(this, notificationActivity.class);
-                    AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, currentTimeInMillis, PendingIntent.getBroadcast(this, 2, intent, PendingIntent.FLAG_UPDATE_CURRENT));
-                }
+//                for (Race race : races) {
+//                    Log.d("EventsSwimmer", "Getting to the time stuff!!");
+//                    int startHour = 17;
+//                    int startMinute = 30;
+//                    startNotification(startHour, startMinute);
+//                }
+//            }
+        }
+
+    public void startNotification(int startHour, int startMinute)
+    {
+            Calendar c = Calendar.getInstance();
+            long rightNow = c.getTimeInMillis();
+            Log.d("notif", String.valueOf(rightNow));
+
+            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+            c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH), startHour, startMinute, 0);
+            Log.d("Notification", "year: " + c.get(Calendar.YEAR) + "month: " + c.get(Calendar.MONTH) + "day: " + c.get(Calendar.DAY_OF_MONTH));
+            long timeToNotify = c.getTimeInMillis();
+            System.out.println("TIME: " + timeToNotify);
+
+            Intent intent = new Intent(this, notificationActivity.class);
+            PendingIntent broadcast = PendingIntent.getBroadcast(this, 0, intent, 0);
+
+            alarmManager.set(AlarmManager.RTC_WAKEUP, timeToNotify, broadcast);
+    }
 //            }
 //        }
 //    }

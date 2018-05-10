@@ -1,52 +1,39 @@
 package com.example.shreya.swamsteras;
 
-import android.app.IntentService;
 import android.app.Notification;
-import android.app.PendingIntent;
+import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 
 /**
  * Created by Shreya on 5/9/18.
  */
 
-public class notificationActivity extends AppCompatActivity
+public class notificationActivity extends BroadcastReceiver
 {
-        @Override
-    protected void onCreate(Bundle savedInstanceState)
+    public static String NOTIFICATION_ID = "notification_id";
+    public static String NOTIFICATION = "notification";
+
+    @Override
+    public void onReceive(Context context, Intent intent)
     {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.notification);
-
-        Button button = findViewById(R.id.notifyButton);
-        button.setOnClickListener(new View.OnClickListener()
-
-        {
-
-
-            @Override
-            public void onClick(View view)
-            {
-
-
-                NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(notificationActivity.this)
+                NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
                         .setSmallIcon(android.R.drawable.stat_notify_error)
                         .setVibrate(new long[]{Notification.DEFAULT_VIBRATE})
                         .setPriority(Notification.PRIORITY_MAX)
                         .setContentTitle("Swamster Race Reminder")
-                        .setContentText("You have 5 minutes left until your race!")
+                        .setContentText("Your race is in 5 minutes!")
                         .setAutoCancel(true);
 
                 notificationBuilder.setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE);
-                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(notificationActivity.this);
-                notificationManager.notify(1, notificationBuilder.build());
-            }
-        });
+                NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.notify(0, notificationBuilder.build());
+
+                Intent intent1 = new Intent();
+                intent1.setClassName(context.getPackageName(),EventsSwimmer.class.getName());
+                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent1);
     }
 }
