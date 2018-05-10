@@ -10,7 +10,6 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -60,18 +59,24 @@ public class EventsSwimmer extends AppCompatActivity {
 //                {
                     int startHour = 20;
                     int startMinute = 12;
-//                    race.setStartHour(startHour);
-//                    race.setStartMinutes(startMinute);
-                    Calendar currentTime = Calendar.getInstance();
-                    long currentTimeInMillis = currentTime.getTimeInMillis();
-                    long hourToMillis = startHour * 60 * 60 * 1000;
-                    long minsToMillis = startMinute * 60 * 1000;
-                    currentTimeInMillis += (hourToMillis + minsToMillis);
-                    Intent intent = new Intent(this, notificationActivity.class);
-                    AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, currentTimeInMillis, PendingIntent.getBroadcast(this, 2, intent, PendingIntent.FLAG_UPDATE_CURRENT));
-                }
-//            }
-//        }
-//    }
+                    startNotification(startHour, startMinute);
+    }
+    public void startNotification(int startHour, int startMinute)
+    {
+        Calendar c = Calendar.getInstance();
+        long rightNow = c.getTimeInMillis();
+        Log.d("notif", String.valueOf(rightNow));
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH), startHour, startMinute, 0);
+        Log.d("Notification", "year: " + c.get(Calendar.YEAR) + "month: " + c.get(Calendar.MONTH) + "day: " + c.get(Calendar.DAY_OF_MONTH));
+        long timeToNotify = c.getTimeInMillis();
+        System.out.println("TIME: " + timeToNotify);
+
+        Intent intent = new Intent(this, notificationActivity.class);
+        PendingIntent broadcast = PendingIntent.getBroadcast(this, 0, intent, 0);
+
+        alarmManager.set(AlarmManager.RTC_WAKEUP, timeToNotify, broadcast);
+    }
 }

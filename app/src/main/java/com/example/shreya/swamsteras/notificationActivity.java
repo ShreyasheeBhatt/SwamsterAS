@@ -31,9 +31,9 @@ public class notificationActivity extends BroadcastReceiver
                 NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
                 notificationManager.notify(0, notificationBuilder.build());
 
-                Intent intent1 = new Intent();
-                intent1.setClassName(context.getPackageName(),EventsSwimmer.class.getName());
-                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent1);
+//                Intent intent1 = new Intent();
+//                intent1.setClassName(context.getPackageName(),EventsSwimmer.class.getName());
+//                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                context.startActivity(intent1);
     }
 }
