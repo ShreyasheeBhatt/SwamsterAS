@@ -25,7 +25,7 @@ public class SwimAndCoachAns extends AppCompatActivity {
         setContentView(R.layout.activity_swim_and_coach_ans);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference teamRef = database.getReference("meet");
+        DatabaseReference teamRef = database.getReference("teams");
 
         teamRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -64,10 +64,10 @@ public class SwimAndCoachAns extends AppCompatActivity {
             }
         });
 
-        final Spinner dropdown2 = findViewById(R.id.meetChoices);
+        final Spinner dropdown3 = findViewById(R.id.ageChoices);
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.ages,android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dropdown2.setAdapter(adapter3);
+        dropdown3.setAdapter(adapter3);
 
     TextView first = findViewById(R.id.firstText);
     TextView last = findViewById(R.id.firstText);
