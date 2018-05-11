@@ -3,6 +3,7 @@ package com.example.shreya.swamsteras;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.style.CharacterStyle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -65,6 +66,17 @@ public class SwimAndCoachAns extends AppCompatActivity {
             }
         });
 */
+
+        final Spinner dropdown = findViewById(R.id.meetChoices);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.meets, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropdown.setAdapter(adapter);
+
+        final Spinner dropdown2 = findViewById(R.id.teamChoices);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.teams, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropdown2.setAdapter(adapter2);
+
         final Spinner dropdown3 = findViewById(R.id.ageChoices);
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.ages,android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
