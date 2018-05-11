@@ -45,14 +45,14 @@ public class SwimAndCoachAns extends AppCompatActivity {
             }
         });
 
-        DatabaseReference meetRef = database.getReference("meet");
+        DatabaseReference meetRef = database.getReference("teams");
         meetRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ArrayList<String> swimmerList = (ArrayList<String>) dataSnapshot.getValue();
 
                 final Spinner dropdown2 = findViewById(R.id.meetChoices);
-                ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(SwimAndCoachAns.this, android.R.layout.simple_spinner_item, swimmerList);
+                ArrayAdapter<String> adapter2 = new ArrayAdapter<>(SwimAndCoachAns.this, android.R.layout.simple_spinner_item, swimmerList);
                 adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 dropdown2.setAdapter(adapter2);
             }

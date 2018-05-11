@@ -10,9 +10,13 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -32,26 +36,23 @@ public class EventsSwimmer extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference swimRef = database.getReference("meet");
 
-      /*  swimRef.child("meet").orderByChild("lastName").equalTo(lastName).on("value", function(snapshot) {
+        swimRef.orderByChild("lastName").equalTo(lastName).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                //ArrayList<Race> raceList = (ArrayList<Race>) dataSnapshot.getValue();
-
-                //Log.d("charles", raceList.get(0).toString());
-                Log.d("charles", dataSnapshot.getKey());
-
-               //final ListView lv = findViewById(R.id.listIndEvents);
-               //ArrayAdapter adapter = new ArrayAdapter<>(EventsSwimmer.this, android.R.layout.simple_list_item_1, raceList);
-               //lv.setAdapter(adapter);
-
+                for(DataSnapshot datas: dataSnapshot.getChildren()){
+                    String keys = datas.getKey();
+                    Log.d("test",keys);
+                }
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
+        });
 
-            });
-      */  {
+
+        {
         // for on data change
 
         final ListView lv = findViewById(R.id.listIndEvents);
@@ -71,29 +72,58 @@ public class EventsSwimmer extends AppCompatActivity {
         lv2.setAdapter(adapter2);
 
     }
-//
-//        Bundle bundle = getIntent().getExtras();
-//        String firstName = bundle.getString("firstName");
-//        String lastName = bundle.getString("lastName");
-//
-//        ArrayList<Swimmer> swimmers = null;
-//        ArrayList<Race> races = null;
-//
-//        InputStream is = getResources().openRawResource(R.raw.data);
-//        csvParse csv = new csvParse(is);
-//        swimmers = csv.getSwimmers();
-//
-//        for(Swimmer swimmer: swimmers)
-//        {
-//            if(firstName.equals(swimmer.getFirstName()))
-//            {
-//                races = swimmer.getRaceList();
-//                for(Race race: races)
-//                {
-                    int startHour = 18;
-                    int startMinute = 25;
-                    startNotification(startHour, startMinute);
+
+        DatabaseReference myRef = database.getReference();
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                Log.d("TAG", "Value is: " + value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.d("TAG", "Failed to read value.", error.toException());
+            }
+        });
+
+
+        ArrayList<Event> events = null;
+        ArrayList<Swimmer> swimmers = null;
+        ArrayList<Race> races = null;
+        Log.d("TimeUpdate", "Initiated ArrayLists");
+
+        InputStream is = getResources().openRawResource(R.raw.data);
+        csvParse csv = new csvParse(is);
+        events = csv.getEvents();
+        swimmers = csv.getSwimmers();
+
+        for(Swimmer swimmer: swimmers)
+        {
+            if(firstName.equals(swimmer.getFirstName()) && lastName.equals(swimmer.getLastName())) {
+                races = swimmer.getRaceList();
+                int x = races.size();
+                for(int n=0; n<x; n++)
+                {
+                    for (Race race : races) {
+                        int startHour = race.getStartHour();
+                        int startMinutes = race.getStartMinutes();
+                        startNotification(startHour, startMinutes);
+                        Calendar rightNow = Calendar.getInstance();
+                        Calendar whenNotified = Calendar.getInstance();
+                        whenNotified.set(rightNow.get(Calendar.YEAR), rightNow.get(Calendar.MONTH), rightNow.get(Calendar.DAY_OF_MONTH), startHour, startMinutes, 0);
+                        if(rightNow.equals(whenNotified))
+                            continue;
+
+                    }
+                }
+            }
+        }
     }
+
     public void startNotification(int startHour, int startMinute)
     {
         Calendar c = Calendar.getInstance();
