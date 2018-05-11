@@ -31,18 +31,40 @@ public class EventsSwimmer extends AppCompatActivity {
         Intent intentExtras = getIntent();
         Bundle strings = intentExtras.getExtras();
         String firstName = strings.getString("firstName");
-        String lastName = strings.getString("lastName");
+        final String lastName = strings.getString("lastName");
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference swimRef = database.getReference("meet");
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference swimRef = database.getReference("0");
+
+        Log.d("test", lastName+ "bigtest");
 
         swimRef.orderByChild("lastName").equalTo(lastName).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot datas: dataSnapshot.getChildren()){
-                    String keys = datas.getKey();
-                    Log.d("test",keys);
+                Log.d("test","medium test"+dataSnapshot.getChildren().toString());
+                for(DataSnapshot data: dataSnapshot.getChildren()){
+                        String keys = dataSnapshot.getKey();
+                        Log.d("test","test"+keys);
                 }
+
+                /*String bip = dataSnapshot.getKey();
+                DatabaseReference foundNode = database.getReference("0/"+bip);
+                foundNode.orderByChild("lastNAme").equalTo(lastName).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for(DataSnapshot data: dataSnapshot.getChildren()){
+                            String keys = data.getKey();
+                            Log.d("test","test"+keys);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+                */
+                Log.d("test","small test");
             }
 
             @Override
@@ -72,24 +94,6 @@ public class EventsSwimmer extends AppCompatActivity {
         lv2.setAdapter(adapter2);
 
     }
-
-        DatabaseReference myRef = database.getReference();
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                Log.d("TAG", "Value is: " + value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.d("TAG", "Failed to read value.", error.toException());
-            }
-        });
-
 
         ArrayList<Event> events = null;
         ArrayList<Swimmer> swimmers = null;

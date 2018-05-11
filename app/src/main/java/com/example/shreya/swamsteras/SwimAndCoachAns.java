@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import com.google.firebase.database.DataSnapshot;
@@ -26,7 +27,7 @@ public class SwimAndCoachAns extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference teamRef = database.getReference("teams");
-
+/*
         teamRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -63,20 +64,20 @@ public class SwimAndCoachAns extends AppCompatActivity {
                 Log.w("Error", "Failed to read value.", error.toException());
             }
         });
-
+*/
         final Spinner dropdown3 = findViewById(R.id.ageChoices);
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.ages,android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown3.setAdapter(adapter3);
 
-    TextView first = findViewById(R.id.firstText);
-    TextView last = findViewById(R.id.firstText);
-    final String firstName = first.getText().toString();
-    final String lastName = last.getText().toString();
+    final EditText first = findViewById(R.id.firstInput);
+    final EditText last = findViewById(R.id.lastInput);
 
     final Button finishButton = findViewById(R.id.finish);
         finishButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
+                String firstName = first.getText().toString();
+                String lastName = last.getText().toString();
                 Bundle bundle = new Bundle();
                 bundle.putString("firstName", firstName);
                 bundle.putString("lastName", lastName);
