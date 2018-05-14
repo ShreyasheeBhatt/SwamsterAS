@@ -13,9 +13,6 @@ import android.support.v4.app.NotificationCompat;
 
 public class notificationActivity extends BroadcastReceiver
 {
-    public static String NOTIFICATION_ID = "notification_id";
-    public static String NOTIFICATION = "notification";
-
     @Override
     public void onReceive(Context context, Intent intent)
     {

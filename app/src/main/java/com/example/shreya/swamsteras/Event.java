@@ -10,23 +10,15 @@ import java.util.ArrayList;
 public class Event {
 
     private String eventName;
-    private Time eventTime;
-    private ArrayList<String> names;
-    private ArrayList<Race> races;
+    private ArrayList<Swimmer> swimmer;
 
-    public Event(String event, ArrayList<String> swimmerNames, Time time, ArrayList<Race> race){
+    public Event(String event, ArrayList<Swimmer> swimmers){
         eventName = event;
-        names = swimmerNames;
-        eventTime = time;
-        races = race;
+        swimmer = swimmers;
     }
 
     public Event()
     {
-        eventName = "";
-        names = null;
-        eventTime = null;
-        races = null;
     }
 
     /**
@@ -37,97 +29,15 @@ public class Event {
         eventName = event;
     }
 
-    /**
-     * Make the list of swimmer names.
-     * @param swimmerNames
-     */
-    public void setNames(ArrayList<String> swimmerNames) {
-        names = swimmerNames;
+    public ArrayList<Swimmer> getSwimmer() {
+        return swimmer;
     }
 
-    /**
-     * Add swimmer names to the list of swimmer names.
-     * @param swimmerName
-     */
-    public void addNames(String swimmerName) {
-        names.add(swimmerName);
+    public void setSwimmer(ArrayList<Swimmer> swimmer) {
+        this.swimmer = swimmer;
     }
 
-    /**
-     * Set the time the event will begin.
-     * @param time
-     */
-    public void setEventTime(Time time) {
-        eventTime = time;
-    }
-
-    /**
-     * Make a list of races within the event.
-     * @param raceS
-     */
-    public void setRaces(ArrayList<Race> raceS) {
-        races = raceS;
-    }
-
-    /**
-     * Add a race to the list of races within the event.
-     * @param race
-     */
-    public void addRaces(Race race) {
-        races.add(race);
-    }
-
-    //***************************//
-
-    /**
-     * Gets name of the event.
-     * @return event name.
-     */
-    public String getEventName(){
+    public String getEventName() {
         return eventName;
-    }
-
-    /**
-     * Gets time of the event.
-     * @return event time.
-     */
-    public Time getEventTime(){
-        return eventTime;
-    }
-
-    /**
-     * Gets an Arraylist of races or heats within the event.
-     * @return list of races.
-     */
-    public ArrayList<Race> getRaces() {
-        return races;
-    }
-
-    /**
-     * Gets the list of names of the swimmers.
-     * @return
-     */
-    public String getNames() {
-        return names.toString();
-    }
-
-    public String getFirstNames() {
-        String[] s = null;
-        for (int n=0; n<names.size()-1; n++)
-        {
-            String name = names.get(n);
-            s = name.split(" ");
-        }
-        return s[0];
-    }
-
-    public String getLastNames() {
-        String[] s = null;
-        for (int n=0; n<names.size()-1; n++)
-        {
-            String name = names.get(n);
-            s = name.split(" ");
-        }
-        return s[0];
     }
 }

@@ -6,33 +6,21 @@ import java.util.*;
 
 public class Race
 {
-    private String event;
     private int heat;
     private int lane;
-    private double time;
-    private int startHour;
-    private int startMinutes;
+    private double swimTime;
     private String swimmer;
 
-    public Race(String eventName, int heatNum, int laneNum, double timeSwam, int hStart, int mStart, String swim)
+    public Race(int heatNum, int laneNum, double timeSwam, String swim)
     {
-        event = eventName;
         heat = heatNum;
         lane = laneNum;
-        time = timeSwam;
-        startHour = hStart;
-        startMinutes = mStart;
+        swimTime = timeSwam;
         swimmer = swim;
     }
 
+    public Race() {
 
-    /**
-     * Gets the event of the race.
-     * @return event name
-     */
-    public String getEvent()
-    {
-        return event;
     }
 
     /**
@@ -59,54 +47,23 @@ public class Race
      */
     public String getSwimmer() { return swimmer;}
 
-    /**
-     * Gets the time it took to swim the race.
-     * @return time
-     */
-    public double getSwimTime()
-    {
-        return time;
+    public void setHeat(int heat) {
+        this.heat = heat;
     }
 
-    /**
-     *
-     */
-    public int getStartHour()
-    {
-        return startHour;
+    public void setLane(int lane) {
+        this.lane = lane;
     }
 
-    public int getStartMinutes()
-    {
-        return startMinutes;
+    public double getSwimTime() {
+        return swimTime;
     }
 
-    /**
-     * Changes the final swim time.
-     * @param timeSwam the time it took to swim the race
-     * @return time
-     */
-    public double changeSwimTime(double timeSwam)
-    {
-        time = timeSwam;
-        return time;
+    public void setSwimTime(double swimTime) {
+        this.swimTime = swimTime;
     }
 
-    public void setStartHour(int hours)
-    {
-        startHour = hours;
-    }
-
-    public void setStartMinutes(int minutes)
-    {
-        startMinutes = minutes;
-    }
-
-    /**
-     * Converts com.example.shreya.swamsteras.Race object to a string.
-     */
-    @Override
-    public String toString() {
-        return ("\nEvent: " + event + "\n\tHeat: " + heat + "\n\tLane: " + lane + "\n\tTime: " + time);
+    public void setSwimmer(String swimmer) {
+        this.swimmer = swimmer;
     }
 }
