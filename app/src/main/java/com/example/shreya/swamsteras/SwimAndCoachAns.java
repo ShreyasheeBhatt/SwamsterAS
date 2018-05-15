@@ -67,7 +67,7 @@ public class SwimAndCoachAns extends AppCompatActivity {
         });
 */
 
-        final Spinner dropdown = findViewById(R.id.meetChoices);
+      /*  final Spinner dropdown = findViewById(R.id.meetChoices);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.meets, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown.setAdapter(adapter);
@@ -81,7 +81,7 @@ public class SwimAndCoachAns extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.ages,android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown3.setAdapter(adapter3);
-
+*/
     final EditText first = findViewById(R.id.firstInput);
     final EditText last = findViewById(R.id.lastInput);
 
