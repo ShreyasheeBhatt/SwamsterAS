@@ -77,21 +77,19 @@ public class EventsSwimmer extends AppCompatActivity {
                         }
                     }
                 }
+                ArrayAdapter adapter = new ArrayAdapter<String>(events.getContext(), android.R.layout.simple_list_item_1, eventsList);
+                events.setAdapter(adapter);
+
+                ArrayAdapter adapter2 = new ArrayAdapter<String>(heats.getContext(), android.R.layout.simple_list_item_1, heatsList);
+                heats.setAdapter(adapter2);
+
+                ArrayAdapter adapter3 = new ArrayAdapter<String>(lanes.getContext(), android.R.layout.simple_list_item_1, lanesList);
+                lanes.setAdapter(adapter3);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-
-        ArrayAdapter adapter = new ArrayAdapter<String>(events.getContext(), android.R.layout.simple_list_item_1, eventsList);
-        events.setAdapter(adapter);
-
-        ArrayAdapter adapter2 = new ArrayAdapter<String>(heats.getContext(), android.R.layout.simple_list_item_1, heatsList);
-        heats.setAdapter(adapter2);
-
-        ArrayAdapter adapter3 = new ArrayAdapter<String>(lanes.getContext(), android.R.layout.simple_list_item_1, lanesList);
-        lanes.setAdapter(adapter3);
     }
 }
-
