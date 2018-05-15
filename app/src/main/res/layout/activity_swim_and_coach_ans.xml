@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/water"
     android:layout_height="match_parent">
-
+<!--
     <TextView
         android:id="@+id/meetText"
         android:layout_width="152dp"
@@ -49,7 +49,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/meetChoices" />
+        app:layout_constraintTop_toBottomOf="@+id/meetChoices" /> -->
 
     <TextView
         android:id="@+id/lastText"
@@ -73,16 +73,16 @@
         android:layout_height="26dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/FirstNameAsk"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageChoices"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
-
+<!--
     <Spinner
         android:id="@+id/meetChoices"
         android:layout_width="0dp"
@@ -121,7 +121,7 @@
         android:background="@android:drawable/btn_dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageText" />
+        app:layout_constraintTop_toBottomOf="@+id/ageText" /> -->
 
     <EditText
         android:id="@+id/firstInput"
