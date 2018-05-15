@@ -55,18 +55,19 @@ public class coachSwimmers extends AppCompatActivity {
                         String team = swimmer.getTeam();
                         if(team.equals(teamName)) {
                             Log.d("test", "Team name: " + team);
-                            swimmerList.add(swimmer.getFirstName());
+                            swimmerList.add(swimmer.toString());
 
                         }
                     }
                 }
+                ArrayAdapter adapter = new ArrayAdapter<String>(swimmers.getContext(), android.R.layout.simple_list_item_1, swimmerList);
+                swimmers.setAdapter(adapter);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        ArrayAdapter adapter = new ArrayAdapter<String>(swimmers.getContext(), android.R.layout.simple_list_item_1, swimmerList);
-        swimmers.setAdapter(adapter);
+
     }
 }
