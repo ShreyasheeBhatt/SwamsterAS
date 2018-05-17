@@ -15,6 +15,9 @@ public class adminLogin extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_login);
 
+        /**
+         * The agree button leads to the time update page.
+         */
         final Button timeButton = findViewById(R.id.agree);
         timeButton.setOnClickListener(new View.OnClickListener()
         {

@@ -179,6 +179,6 @@ public class Swimmer {
      */
     @Override
     public String toString() {
-        return (lastName + ", " + firstName + "\tAge: " + age + " years" + "\nRaces: " + getRaces());
+        return (lastName + ", " + firstName + " \tAge: " + age + " years" + "\nRaces: " + getRaces());
     }
 }
