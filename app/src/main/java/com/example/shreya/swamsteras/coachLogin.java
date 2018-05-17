@@ -16,6 +16,9 @@ public class coachLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coach_login);
 
+        /**
+         * The meet choices spinner displays the meets.
+         */
         Spinner dropdown = findViewById(R.id.meetChoices);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.meets, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
