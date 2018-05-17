@@ -18,13 +18,24 @@ public class DataBaser {
     private Race race;
     private String test;
 
+    /**
+     * Constructs a Databaser object.
+     */
     public DataBaser(){
     }
 
+    /**
+     *
+     * @return test
+     */
     public String bigTest() {
         return "test";
     }
 
+    /**
+     *
+     * @return
+     */
     public String getTest() {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference eventRef = database.getReference("server");
@@ -33,7 +44,6 @@ public class DataBaser {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 test = dataSnapshot.getValue(String.class);
-                Log.d ("charles", "read");
             }
 
             @Override
@@ -43,8 +53,7 @@ public class DataBaser {
 
 
         });
-        Log.d ("charles","before send");
-        return test+"noice ";
+        return test;
 
     }
 

@@ -174,11 +174,15 @@ public class Swimmer {
         this.lastName = lastName;
     }
 
+    public String forCoachView() {
+        return (lastName + ", " + firstName + "\t | \tAge: " + age + " years" + "\nEvent: " + event + "\nRaces: " + getRaces());
+    }
+
     /**
      * Converts com.example.shreya.swamsteras.Swimmer object to a string.
      */
     @Override
     public String toString() {
-        return (lastName + ", " + firstName + " \tAge: " + age + " years" + "\nRaces: " + getRaces());
+        return (lastName + ", " + firstName + "\t | \tAge: " + age + " years" + "\nRaces: " + getRaces());
     }
 }

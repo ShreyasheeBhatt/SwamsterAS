@@ -27,36 +27,37 @@ public class coachSwimmers extends AppCompatActivity {
         Bundle strings = intent.getExtras();
 
         final String teamName = strings.getString("team");
-        Log.d("test", teamName);
-
         final List<String> swimmerList = new ArrayList();
         final ListView swimmers = findViewById(R.id.swimmersList);
-
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        //Gets a database reference for the main node in our database.
         DatabaseReference teamRef = database.getReference("0");
 
+        //Creates a new ValueEventListener which enables pulling data from the database.
         teamRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.d("test", "4. Gets here.");
                 Event event;
-                Log.d("test", "5. Gets here.");
-                for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    Log.d("test", "6. Gets here.");
-                    event = data.getValue(Event.class);
-                    Log.d("test", "7. Gets here.");
-                    ArrayList<Swimmer> swimmers = event.getSwimmer();
-                    if(swimmers == null) {
-                        Log.d("test", "NULL");
-                    }
-                    Log.d("test", "Gets here.");
-                    for(Swimmer swimmer : swimmers) {
-                        Log.d("test", "Last Name: " + swimmer.getLastName());
-                        String team = swimmer.getTeam();
-                        if(team.equals(teamName)) {
-                            Log.d("test", "Team name: " + team);
-                            swimmerList.add(swimmer.toString());
 
+                /* Loops through the children in our main database node.*/
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+
+                    /* Sets Event event to the Event in the particular child node. */
+                    event = data.getValue(Event.class);
+
+                    /* Sets the ArrayList of Swimmers to the event's swimmer list. */
+                    ArrayList<Swimmer> swimmers = event.getSwimmer();
+
+                    /* Loops through the list of swimmers in the event. */
+                    for(Swimmer swimmer : swimmers) {
+
+                        /* Sets the team variable to the swimmer's team. */
+                        String team = swimmer.getTeam();
+
+                        /* Checks if the coach's inputted team matches the swimmer's team. If they match, the swimmer is added to the swimmer list to be viewed. */
+                        if(team.equals(teamName)) {
+                            swimmerList.add(swimmer.forCoachView());
                         }
                     }
                 }

@@ -39,36 +39,42 @@ public class EventsSwimmer extends AppCompatActivity {
         final ListView lanes = findViewById(R.id.listOfLanes);
         final List<String> lanesList = new ArrayList();
 
-        Log.d("test", "1. Gets here.");
-
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        //Gets a database reference for the main node in our database.
         DatabaseReference swimRef = database.getReference("0");
 
-        Log.d("test", "2. Gets here.");
-
+        //Creates a new ValueEventListener which enables pulling data from the database.
         swimRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.d("test", "4. Gets here.");
+                /* Sets Event event to the Event in the particular child node. */
                 Event event;
-                Log.d("test", "5. Gets here.");
+
+                /* Loops through the children in our main database node.*/
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    Log.d("test", "6. Gets here.");
+
+                    /* Sets Event event to the Event in the particular child node. */
                     event = data.getValue(Event.class);
-                    Log.d("test", "7. Gets here.");
+
+                    /* Sets the ArrayList of Swimmers to the event's swimmer list. */
                     ArrayList<Swimmer> swimmers = event.getSwimmer();
-                    if(swimmers == null) {
-                        Log.d("test", "NULL");
-                    }
-                    Log.d("test", "Gets here.");
+
+                    /* Loops through the list of swimmers in the event. */
                     for(Swimmer swimmer : swimmers) {
-                        Log.d("test", "Last Name: " + swimmer.getLastName());
                         String last = swimmer.getLastName();
                         String first = swimmer.getFirstName();
+
+                        /* Checks to see if the swimmer's last name and first name match the first and last name that the user inputted on the last page. */
                         if(last.equals(lastName) && first.equals(firstName)) {
-                            Log.d("test", "Last Name: " + last + "First Name: " + first);
+
+                            /* Adds the swimmer's event to the event list to be viewed. */
                             eventsList.add(swimmer.getEvent());
+
+                            /* Sets the ArrayList of Races to the event's race list. */
                             ArrayList<Race> races = swimmer.getRaceList();
+
+                            /* Loops through the races, adding the heat and lane of each race. */
                             for(Race race : races) {
                                 heatsList.add(String.valueOf(race.getHeat()));
                                 lanesList.add(String.valueOf(race.getLane()));

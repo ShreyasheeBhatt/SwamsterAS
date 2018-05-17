@@ -26,62 +26,6 @@ public class SwimAndCoachAns extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swim_and_coach_ans);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference teamRef = database.getReference("teams");
-/*
-        teamRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                ArrayList<String> teamList = (ArrayList<String>) dataSnapshot.getValue();
-
-                final Spinner dropdown = findViewById(R.id.teamChoices);
-                ArrayAdapter<String> adapter2 = new ArrayAdapter<>(SwimAndCoachAns.this, android.R.layout.simple_spinner_item, teamList);
-                adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                dropdown.setAdapter(adapter2);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("Error", "Failed to read value.", error.toException());
-            }
-        });
-
-        DatabaseReference meetRef = database.getReference("teams");
-        meetRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                ArrayList<String> swimmerList = (ArrayList<String>) dataSnapshot.getValue();
-
-                final Spinner dropdown2 = findViewById(R.id.meetChoices);
-                ArrayAdapter<String> adapter2 = new ArrayAdapter<>(SwimAndCoachAns.this, android.R.layout.simple_spinner_item, swimmerList);
-                adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                dropdown2.setAdapter(adapter2);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("Error", "Failed to read value.", error.toException());
-            }
-        });
-*/
-
-      /*  final Spinner dropdown = findViewById(R.id.meetChoices);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.meets, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dropdown.setAdapter(adapter);
-
-        final Spinner dropdown2 = findViewById(R.id.teamChoices);
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.teams, android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dropdown2.setAdapter(adapter2);
-
-        final Spinner dropdown3 = findViewById(R.id.ageChoices);
-        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.ages,android.R.layout.simple_spinner_item);
-        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dropdown3.setAdapter(adapter3);
-*/
     final EditText first = findViewById(R.id.firstInput);
     final EditText last = findViewById(R.id.lastInput);
 
