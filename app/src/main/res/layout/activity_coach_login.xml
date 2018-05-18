@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/water2"
-    tools:context="com.example.shreya.swamsteras.coachLogin">
+    tools:context="com.example.shreya.swamsteras.coachLogin"
+    android:background="@drawable/water2">
+    <!--The youtube video that showed how to use a picture as a background: https://www.youtube.com/watch?v=ezpOmH50Xdg -->
+
 
     <TextView
         android:id="@+id/meetText"
