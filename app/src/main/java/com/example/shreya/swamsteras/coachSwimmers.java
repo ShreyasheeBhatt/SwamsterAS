@@ -31,16 +31,16 @@ public class coachSwimmers extends AppCompatActivity {
         final ListView swimmers = findViewById(R.id.swimmersList);
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        //Gets a database reference for the main node in our database.
+        /* Gets a database reference for the main node in our database. */
         DatabaseReference teamRef = database.getReference("0");
 
-        //Creates a new ValueEventListener which enables pulling data from the database.
+        /* Creates a new ValueEventListener which enables pulling data from the database. */
         teamRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Event event;
 
-                /* Loops through the children in our main database node.*/
+                /* Loops through the children in our main database node. */
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
 
                     /* Sets Event event to the Event in the particular child node. */
@@ -61,7 +61,8 @@ public class coachSwimmers extends AppCompatActivity {
                         }
                     }
                 }
-                ArrayAdapter adapter = new ArrayAdapter<String>(swimmers.getContext(), android.R.layout.simple_list_item_1, swimmerList);
+                /* Sets the adapter to show all the swimmers' names and event information. */
+                ArrayAdapter adapter = new ArrayAdapter<>(swimmers.getContext(), android.R.layout.simple_list_item_1, swimmerList);
                 swimmers.setAdapter(adapter);
             }
 

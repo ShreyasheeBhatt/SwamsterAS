@@ -14,7 +14,7 @@ public class coachOrSwimmer extends AppCompatActivity {
         setContentView(R.layout.activity_coach_or_swimmer);
 
         /**
-         * The swim button leads to the swim and coach ans page.
+         * The swim button leads to the swimmer login page, where swimmers inputs their first and last name to view their individual events.
          */
         final Button swimmersButton = findViewById(R.id.swimButton);
         swimmersButton.setOnClickListener(new View.OnClickListener(){
@@ -25,7 +25,7 @@ public class coachOrSwimmer extends AppCompatActivity {
         });
 
         /**
-         * The coach button leads to the coach login page.
+         * The coach button leads to the coach login page, where the coach inputs their meet and team name in order to view their swimmers' events.
          */
         final Button coachsButton = findViewById(R.id.coachButton);
         coachsButton.setOnClickListener(new View.OnClickListener(){

@@ -26,6 +26,9 @@ public class coachLogin extends AppCompatActivity {
 
         final EditText teamChoice = findViewById(R.id.teamChoices);
 
+        /**
+         * This button leads to the coach's page where they can view their swimmers and their events.
+         */
         final Button findButton = findViewById(R.id.find);
         findButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
