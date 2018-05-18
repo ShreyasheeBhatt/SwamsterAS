@@ -13,9 +13,7 @@ public class coachOrSwimmer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coach_or_swimmer);
 
-        /**
-         * The swim button leads to the swim and coach ans page.
-         */
+        //The swim button leads to the swim and coach ans page.
         final Button swimmersButton = findViewById(R.id.swimButton);
         swimmersButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
@@ -24,9 +22,7 @@ public class coachOrSwimmer extends AppCompatActivity {
             }
         });
 
-        /**
-         * The coach button leads to the coach login page.
-         */
+        //The coach button leads to the coach login page.
         final Button coachsButton = findViewById(R.id.coachButton);
         coachsButton.setOnClickListener(new View.OnClickListener(){
 

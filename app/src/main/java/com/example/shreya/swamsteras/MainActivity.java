@@ -15,9 +15,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /**
-         * The swimmer choice button leads to the coach or swimmer page.
-         */
+        //The swimmer choice button leads to the coach or swimmer page.
         final Button swimCoachButton = findViewById(R.id.swimmerChoiceButton);
         swimCoachButton.setOnClickListener(new View.OnClickListener() {
 
@@ -27,9 +25,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        /**
-         * The admin choice button leads to the admin login page.
-         */
         //The admin button on the main page connects to the terms/conditions page.
         final Button adminButton = findViewById(R.id.adminChoiceButton);
         adminButton.setOnClickListener(new View.OnClickListener() {
